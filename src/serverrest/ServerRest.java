@@ -36,6 +36,12 @@ public class ServerRest {
             // Registra gli handler per gli endpoint
             server.createContext("/api/calcola/post", new PostHandler());
             server.createContext("/api/calcola/get", new GetHandler());
+
+            server.createContext("/api/User/get", new GetUserHandler());
+            server.createContext("/api/User/post", new PostUserHandler());
+
+           
+            
             
             // Endpoint di benvenuto
             server.createContext("/", ServerRest::gestisciBenvenuto);
@@ -54,7 +60,6 @@ public class ServerRest {
             System.out.println("  - POST: http://localhost:" + porta + "/api/calcola/post");
             System.out.println("  - GET:  http://localhost:" + porta + "/api/calcola/get");
             System.out.println("  - Info: http://localhost:" + porta + "/");
-            System.out.println();
             System.out.println("Operatori supportati:");
             System.out.println("  SOMMA, SOTTRAZIONE, MOLTIPLICAZIONE, DIVISIONE");
             System.out.println();
